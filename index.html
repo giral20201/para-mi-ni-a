@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Quieres ser mi Valentín?</title>
+    <style>
+        body {
+            text-align: center;
+            background: linear-gradient(to right, #ff9a9e, #fad0c4);
+            font-family: 'Dancing Script', cursive;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .mensaje {
+            font-size: 3em;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        .frase {
+            font-size: 1.5em;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+        .imagen-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .imagen-container img {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .corazon {
+            color: red;
+            font-size: 4em;
+            animation: latido 1s infinite;
+        }
+        @keyframes latido {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.3); }
+            100% { transform: scale(1); }
+        }
+        .botones {
+            margin-top: 20px;
+        }
+        .boton {
+            font-size: 22px;
+            padding: 12px 24px;
+            margin: 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 10px;
+            font-weight: bold;
+        }
+        .si {
+            background-color: #ff69b4;
+            color: white;
+        }
+        .no {
+            background-color: #ff0000;
+            color: white;
+            position: absolute;
+        }
+        .pantalla-inicial {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            padding: 20px;
+        }
+        .pantalla-pregunta {
+            display: none;
+        }
+        .mensaje-carta, .mensaje-final {
+            font-family: 'Arial', sans-serif;
+            font-size: 1.2em;
+            margin-top: 30px;
+            font-style: italic;
+            color: #fff;
+            padding: 0 10%;
+            line-height: 1.6;
+        }
+        .mensaje-final {
+            font-size: 1.1em;
+            margin-top: 20px;
+            text-align: left;
+        }
+        .mensaje-ultimo {
+            font-size: 2em;
+            font-weight: bold;
+            color: #fff;
+            margin-top: 40px;
+            animation: latido 1s infinite;
+        }
+        .boton-retroceder {
+            background-color: #f39c12;
+            color: white;
+            font-size: 18px;
+            padding: 10px 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="pantalla-inicial" id="pantallaInicial">
+        <div class="mensaje">🌻 Bienvenida, mi amor 🌻</div>
+        <div class="frase">"Desde que te conocí, supe que mi mundo sería más bonito contigo. Te amo con todo mi corazón." 💕</div>
+        <button class="boton si" onclick="mostrarPregunta()">Siguiente ➡️</button>
+    </div>
+
+    <div class="pantalla-pregunta" id="pantallaPregunta">
+        <div class="mensaje">💕 Mi amor, ¿quieres ser mi Valentín? 💕</div>
+        <div class="imagen-container">
+            <img src="image.png" class="pequeña" alt="Nuestra foto juntos">
+        </div>
+        <div class="corazon">❤️</div>
+        <div class="mensaje-carta">
+            <p>Mi amor, no tengo palabras suficientes para expresarte lo que siento. Gracias por estar siempre a mi lado, por tu amor incondicional y por ser mi apoyo en cada paso que doy. Confío plenamente en ti, y estoy tan feliz por todos los avances que has tenido. Me siento increíblemente orgulloso de ti. Te amo más de lo que las palabras pueden decir y siempre estaré aquí para ti. 💖</p>
+        </div>
+        <div class="botones">
+            <button class="boton si" onclick="aceptar()">Sí 💖</button>
+            <button class="boton no" onmouseover="moverBoton(this)">No 💔</button>
+        </div>
+        <button class="boton-retroceder" onclick="volver()">Volver 🔙</button>
+    </div>
+
+    <div class="mensaje-final" id="mensajeFinal" style="display: none;">
+        <p>Mi amor,</p>
+        <p>Hoy quería tomarme un momento para escribirte, porque a veces las palabras habladas se quedan cortas para expresar lo que siento por ti. Desde que apareciste en mi vida, todo cambió para mejor. Tú llenas mis días de luz, y cada momento a tu lado se convierte en un recuerdo especial que guardo con cariño.</p>
+        <p>Tu sonrisa, esa que ilumina hasta los días más grises, me hace sentir la persona más afortunada del mundo. Cuando estoy contigo, no importa el lugar ni el tiempo; solo importa que estás aquí, conmigo.</p>
+        <p>Eres el regalo más hermoso que la vida me ha dado, y cada día me esfuerzo por ser alguien digno de tu amor. Nunca dejes de ser esa persona maravillosa que tanto admiro y amo.</p>
+        <p>Gracias por ser mi compañera, mi apoyo y mi razón para sonreír. Te amo más de lo que las palabras podrían describir, y quiero seguir demostrándotelo cada día.</p>
+        <p>Con todo mi amor,<br>Andres, tu tontico 💖</p>
+        <div class="imagen-container">
+            <img src="miamor.jpg" alt="Nuestra foto especial">
+        </div>
+        <div class="mensaje-ultimo">
+            TE AMO CON TODO MI CORAZÓN ❤️❤️❤️❤️❤️
+        </div>
+        <button class="boton-retroceder" onclick="volver()">Volver 🔙</button>
+    </div>
+
+    <!-- Botón para abrir la música de YouTube en una nueva pestaña -->
+    <script>
+        function mostrarPregunta() {
+            document.getElementById('pantallaInicial').style.display = 'none';
+            document.getElementById('pantallaPregunta').style.display = 'block';
+        }
+
+        function aceptar() {
+            alert("¡Sabía que dirías que sí! 💘😍");
+            document.getElementById('pantallaPregunta').style.display = 'none';
+            document.getElementById('mensajeFinal').style.display = 'block';
+        }
+
+        function moverBoton(boton) {
+            let x = Math.random() * (window.innerWidth - 100);
+            let y = Math.random() * (window.innerHeight - 100);
+            boton.style.left = x + "px";
+            boton.style.top = y + "px";
+        }
+
+        function volver() {
+            document.getElementById('pantallaPregunta').style.display = 'none';
+            document.getElementById('mensajeFinal').style.display = 'none';
+            document.getElementById('pantallaInicial').style.display = 'block';
+        }
+
+        // Función para abrir la música de YouTube en una nueva pestaña
+        function abrirMusica() {
+            window.open('https://www.youtube.com/watch?v=v3-9eDFDAFw', '_blank');
+        }
+
+        // Llamar a la función para abrir la música al hacer clic
+        window.onload = function() {
+            const botonMusica = document.createElement("button");
+            botonMusica.innerText = "Abrir Música 🎶";
+            botonMusica.classList.add("boton");
+            botonMusica.onclick = abrirMusica;
+            document.body.appendChild(botonMusica);
+        }
+    </script>
+</body>
+</html>
